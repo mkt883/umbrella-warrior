@@ -1,4 +1,4 @@
-# PLAYER CONTROLLER README #
+# MA1805 README #
 
 # How to play:
 - Use the arrow keys to make the player move
