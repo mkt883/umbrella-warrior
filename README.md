@@ -59,3 +59,15 @@ I lso ran into another issue when implamenting the enemy code. I need to again m
 The player sprite need to be updated because they overlay over the idle sprite.
 
 A major issue with the code so far though is that it is too cluttered. I need to find the code that lets me link these multiple files together to create a neater & less destructive coding environment.
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PROTOTYPE</title>
+    <script src="2400966-2411556-2400689-2405173-ma1805-prototype-project/PLATFORMER-CONTROLLER-PROTOTYPE/PLAYER-&-TILEMAP-CODE.js"></script>
+  </head>
+  <body>
+    <script src="p5.js"></script>
+    <!--script src="sketch.js"></script-->
+  </body>
+</html>
