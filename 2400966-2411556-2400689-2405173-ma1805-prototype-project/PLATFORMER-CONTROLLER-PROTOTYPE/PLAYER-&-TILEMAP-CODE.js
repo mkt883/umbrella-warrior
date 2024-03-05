@@ -32,27 +32,34 @@ let runL;
 let runR;
 
 let player = {
-    x: 100,
+  //player pos
+    x: 100, 
     y: 100,
+  //player velocity
     vx: 0, 
     vy: 0,
+  //player sizing
     w: 30,
     h: 50,
+  //jump variables
     onGround: false,
     canJump: false,
     jumpCount: 1,
     maxJump: 7,
+  //functions
     draw: function() {
       image(idle,/* rect(*/this.x, this.y, this.w, this.h)
     },
     update: function() {
       if(!player.onGround) this.vy += 0.5;  // Gravity
       /* Jumping:
+      Want to add...
+      
       different height variables: variable beight based on key press time
       have it so whilst the key is down, player.vy gradualy decreases until it reaches max jump height
       */
 
-      if(keyIsDown(UP_ARROW)&& player.canJump){
+      if(keyIsDown(UP_ARROW)&& player.canJump){ //made the canJump edit
         player.jump = true;
         player.onGround = false;
         player.vy = -7;
@@ -60,8 +67,9 @@ let player = {
         playerSprite = image(idle, this.x, this.y, this.w, this.h)
       }
 
-      console.log(this.canJump);
- 
+      console.log(this.canJump); //had a bug, needed to figure out when it detected when we are able to jump
+
+      //key pressed movement
       this.y += this.vy
       if(keyIsDown(LEFT_ARROW)){
         /*if(player.onGround)*/ this.vx -= 0.9
@@ -75,6 +83,7 @@ let player = {
       this.x += this.vx 
       this.x *= 0.9
 
+      //when you can jump
       if(this.onGround && this.jumpCount === 1){
         this.canJump = true;
       }else{
@@ -101,12 +110,12 @@ function preload(){
     textures[12] = loadImage("meow/wardrobe new ting.PNG")
     textures[13] = loadImage("meow/vending machen.png")
 
-
+/*           TEMPORARY PLAYER SPRITES             */
   idle = loadImage("playerSprites/temp-player.png");
   runR = loadImage("playerSprites/temp-player-run-right.png");
   runL = loadImage("playerSprites/temp-player-run-left.png");
 }
-  
+  //this is the code for the rectangles. This is used to detect collisions. I hid the rectangle behind the tiles 
 function rectangle(x, y, w, h){
     this.x = x;
     this.y = y;
@@ -181,10 +190,10 @@ function draw() {
   r6.draw();
   r7.draw();
   //r8.draw();
-  //r9.draw();
+  //r9.draw();     <-- reason for comment out is further down
     if(rectColliding(player, r1)) {
-      player.vy = 0;
-      player.onGround = true;
+      player.vy = 0; //stops player velocity 
+      player.onGround = true; //allows player to jump
     }
     
     if(rectColliding(player, r2)) {
@@ -225,7 +234,9 @@ function draw() {
     // }
     //player.draw()
 
-    /*       TILEMAP CODE      */
+
+  
+    /*                         TILEMAP CODE                      */
 
   for (let across = 0; across < numAcross; across++) {
     for (let down = 0; down < numDown; down++) {
@@ -237,7 +248,8 @@ function draw() {
   player.update()
   player.draw();
 }
-  
+
+//this function detects the collisions. If rect1 is in rect2, they are colliding
 function rectColliding(rect1, rect2) {
     if (
       rect1.x < rect2.x + rect2.w &&
