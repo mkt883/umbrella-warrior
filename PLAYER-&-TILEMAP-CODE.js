@@ -96,7 +96,7 @@ let player = {
 function preload(){
   /* TILEMAP IMAGES */
   textures[0] = loadImage("meow/wooden planks.png");
-    textures[1] = loadImage("meow/door 2.png")
+    textures[1] = loadImage("meow/door 2.PNG")
     textures[2] = loadImage("meow/cobblestone.png");
     textures[3] = loadImage("meow/door.png")
     textures[4] = loadImage("meow/roof.png")
