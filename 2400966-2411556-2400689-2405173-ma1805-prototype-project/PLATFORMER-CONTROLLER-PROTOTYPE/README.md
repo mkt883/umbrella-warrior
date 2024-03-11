@@ -33,7 +33,7 @@ Daniel:
  Is in control of the tile map room for the player to jump and fight around, the artwork behind it and designing the future player maps too as well as the player outfits and aesthetics.
 
 Rafael:
- Is doing the enemy types making them be able to move around the map to try and kill the main character (you), and making them have random movements around the map to make the game feel alive.
+ Is doing the enemy types making them be able to move around the map to try and kill the main character (you), and making them have random movements around the map to make the game feel alive. This code can be found in the "Duplicate files to work on" folder and will be implemented into the the main code for the final project. The code does not make the enemy attack the player just yet either.
 
 
 # Player movement code notes:
