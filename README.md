@@ -60,6 +60,6 @@ The player sprite need to be updated because they overlay over the idle sprite.
 
 A major issue with the code so far though is that it is too cluttered. I need to find the code that lets me link these multiple files together to create a neater & less destructive coding environment.
 
- # !!ENEMY & ATTACK CODE IS IN MAIN FILE!!
+ # ENEMY & ATTACK CODE IS IN MAIN FILE
 - Still issue with implamenting Rafa's enemy code but it has been succefully commented out
 - the attack code by Tom is in the main file and doesn't crash the player or tilemap code, however it doesn't appear whilst playing
