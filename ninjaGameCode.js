@@ -114,19 +114,19 @@ let player = {
 function preload(){
   /* TILEMAP IMAGES */
   textures[0] = loadImage("meow/wooden planks.png");
-  textures[1] = loadImage("meow/door 2.png")
-  textures[2] = loadImage("meow/cobblestone.png");
-  textures[3] = loadImage("meow/door.png")
-  textures[4] = loadImage("meow/roof.png")
-  textures[5] = loadImage("meow/japan window.png")
-  textures[6] = loadImage("meow/top left corner.png")
-  textures[7] = loadImage("meow/bottom left corner.png")
-  textures[8] = loadImage("meow/top right corner.png")
-  textures[9] = loadImage("meow/bottom right corner.png")
-  textures[10] = loadImage("meow/finished tree.PNG")
-  textures[11] = loadImage("meow/sword rack.png")
-  textures[12] = loadImage("meow/wardrobe new ting.PNG")
-  textures[13] = loadImage("meow/vending machen.png")
+    textures[1] = loadImage("meow/door 2.PNG")
+    textures[2] = loadImage("meow/cobblestone.png");
+    textures[3] = loadImage("meow/door.png")
+    textures[4] = loadImage("meow/roof.png")
+    textures[5] = loadImage("meow/japan window.png")
+    textures[6] = loadImage("meow/top left corner.png")
+    textures[7] = loadImage("meow/bottom left corner.png")
+    textures[8] = loadImage("meow/top right corner.png")
+    textures[9] = loadImage("meow/bottom right corner.png")
+    textures[10] = loadImage("meow/finished tree.PNG")
+    textures[11] = loadImage("meow/sword rack.png")
+    textures[12] = loadImage("meow/wardrobe new ting.PNG")
+    textures[13] = loadImage("meow/vending machen.png")
 
 
   //ENEMY
