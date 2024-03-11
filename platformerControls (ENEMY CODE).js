@@ -91,7 +91,7 @@ let player = {
 function preload(){
   /* TILEMAP IMAGES */
   textures[0] = loadImage("meow/wooden planks.png");
-  textures[1] = loadImage("meow/door 2")
+  textures[1] = loadImage("meow/door 2.png")
   textures[2] = loadImage("meow/cobblestone.png");
   textures[3] = loadImage("meow/door.png")
   textures[4] = loadImage("meow/roof.png")
@@ -161,7 +161,7 @@ function setup() {
 
 
 
-     /*                   ENEMY CODE                  */
+     /*                   ENEMY CODE                  
 
     rows = graphicMap.length;
     cols = graphicMap[0].length;
@@ -180,7 +180,7 @@ function setup() {
     } while (collidesWithWalls(enemy.x + 20, enemy.y + 20)); // Checking the center of the enemy sprite
     enemies.push(enemy);
     
-}
+}*/
 
     /*                        TILEMAP CODE                     */
     let tileID = 0; 
@@ -254,7 +254,7 @@ function draw() {
     */
     //player.draw()
 
-  /*                ENEMY CODE                    */
+  /*                ENEMY CODE                    
     // Move each enemy sprite
     for (let enemy of enemies) {
       moveEnemy(enemy);
@@ -280,7 +280,7 @@ function moveEnemy(enemy) {
   // Keep the enemy within the canvas bounds
   enemy.x = constrain(enemy.x, 0, width - 40); 
   enemy.y = constrain(enemy.y, 0, height - 40);
-}
+}*/
     /*       TILEMAP CODE      */
 
   for (let across = 0; across < numAcross; across++) {
