@@ -60,14 +60,6 @@ The player sprite need to be updated because they overlay over the idle sprite.
 
 A major issue with the code so far though is that it is too cluttered. I need to find the code that lets me link these multiple files together to create a neater & less destructive coding environment.
 
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>PROTOTYPE</title>
-    <script src="2400966-2411556-2400689-2405173-ma1805-prototype-project/PLATFORMER-CONTROLLER-PROTOTYPE/PLAYER-&-TILEMAP-CODE.js"></script>
-  </head>
-  <body>
-    <script src="p5.js"></script>
-    <!--script src="sketch.js"></script-->
-  </body>
-</html>
+ # !!ENEMY & ATTACK CODE IS IN MAIN FILE!!
+- Still issue with implamenting Rafa's enemy code but it has been succefully commented out
+- the attack code by Tom is in the main file and doesn't crash the player or tilemap code, however it doesn't appear whilst playing
