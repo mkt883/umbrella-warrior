@@ -63,3 +63,5 @@ A major issue with the code so far though is that it is too cluttered. I need to
  # ENEMY & ATTACK CODE IS IN MAIN FILE
 - Still issue with implamenting Rafa's enemy code but it has been succefully commented out
 - the attack code by Tom is in the main file and doesn't crash the player or tilemap code, however it doesn't appear whilst playing
+
+- Both of the independent projects made by both of them can be found in the repository. Rafa's under "Final Game Group" & Tom's under "Umbrella Warrior TJ"
