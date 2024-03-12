@@ -316,7 +316,13 @@ function moveEnemy(enemy) {
   player.update()
   player.draw();
 }
-  
+
+function keyPressed() {
+  if (keyCode === 32) {
+      player.attack();
+  }
+}
+
 function rectColliding(rect1, rect2) {
     if (
       rect1.x < rect2.x + rect2.w &&
