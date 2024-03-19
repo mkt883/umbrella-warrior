@@ -1,7 +1,7 @@
 # UMBRELLA WARRIOR #
 
 ## BY BIG BACKFLIP GAMES
-### Members: Mark Taylor-Chacksfield, Thomas Jeffries, Rafa Haataja, Danny Matthews
+### Members: Mark Taylor-Chacksfield, Thomas Jeffries, Rafael Haataja, Danny Matthews
 
 ## .        Game Overview
 
