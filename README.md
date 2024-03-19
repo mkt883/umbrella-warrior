@@ -1,67 +1,48 @@
-# MA1805 README #
+# UMBRELLA WARRIOR #
 
-# How to play:
-- Use the arrow keys to make the player move
-- If any player is touching an object with a collider, you can jump.
-    (Currently, the coliders for the player are only in place for the jumping mechanic, there isn't any wall or ceiling detection yet)
+## BY BIG BACKFLIP GAMES
+### Members: Mark Taylor-Chacksfield, Thomas Jeffries, Rafa Haataja, Danny Matthews
 
+## .        Game Overview
 
+We have created a side scrolling adventure game, reminiscent of early SNES, SEGA Mega Drive hits like Super Mario and Shinobi 2. Our game follows an umbrella wielding ninja warrior as he seeks to avenge a fallen love. He does this by navigating a number of levels and defeating the enemies sent to chase him down. We have chosen a classic 16/8 bit style for this game and kept the colour palette fairly dark in order to convey the tense atmosphere. The art design calls on ancient Japanese architecture, typical of when ninjas were more common.
 
+## . Individual Contributions
 
-## ·         A plan for narrative development.
+### MARK
 
-The plan we have for our group project is that of expansion of our game. For example, as of right now we have one room which is a ninja dojo, one enemy type and one main character. We wish to make more rooms, more enemy types and more ways to attack the enemy.
+### THOMAS 
+My contributions to the project were creating the main menu and subsequent screens. I wrote the lore, tutorial and credit screens. I used mouseIsOver, MousePressed and Draw functions to achieve this. To improve formatting, I used arrays for the content of each screen. I also designed the Umbrella Warrior artwork on the main menu and added the rain affect by generating falling rect shapes.
 
-## ·         An explanation of themes 
-
-The theme that we would like to use and explore is a samurai/ninja/japanese type style, we will be using dojos and other places you would usually find a ninja or samurai in and we will be styling the attacks and character styles and outfits on how ninjas would attack and dress. 
-
-## ·         MOODBOARD IMAGES
-![](ninja.jpg)
-![](mushroom.jpg)
-![](levels.jpg)
-
-##  ·         A list of the group members and a detailed account of their duties/role in the development of the project.
-
-Tom:
- In control of making the character inflict damage onto the enemies, creating invisible hitboxes by using rectangles for the enemies so that the player can successfully kill them (make them disappear).
-
-Mark:
- Is taking the movement role, by making sure the player is able to jump onto objects within the map, run around the map to evade or attack enemies by using invisible rectangles that the player can jump on.
-
-Daniel:
- Is in control of the tile map room for the player to jump and fight around, the artwork behind it and designing the future player maps too as well as the player outfits and aesthetics.
-
-Rafael:
- Is doing the enemy types making them be able to move around the map to try and kill the main character (you), and making them have random movements around the map to make the game feel alive.
+I created the attack action in a simple rectangle format so that we could implement this into our code later. I achieved this by creating player and enemy classes, then using a draw function to create the hitbox and a checkCollision function to determine a hit or miss. A hit will then null the enemy class. I also created a ranged attack which we decided against using for thematic reasons.
 
 
-# Player movement code notes:
+### RAFA  
 
-I found this video: https://www.youtube.com/watch?v=TwWZwS8iBrw which helped me make the base for the platformer controller. 
+### DANNY  
 
-I thought it was interesting how he did things like use functions in the player object. It helped keep the code more contained.
+## .        Themes 
 
-## Own Adjustments & current issues
-There were some issues/aspects in the tutorial code which I wanted to improve and adjust such as:
-- how you can infinitely jump 
-- gravity only applied when you jump (meaning when you walked off of the higher platform you wouldn't fall)
-- only jumping in straight lines
+The main theme of this game is adventure. The Umbrella Warrior has far to go and many enemies in his path. We have opted for a darker tone in order to create intrigue and buy in from the player. Ultimately, we are looking to create a high stakes situation in a very short amount of time. 
 
-In the prototype I added 'jumpCount' & 'canJump to solve the first issue.
 
-I took away some of the tutorial code (an if statement which only allowed you to jump if not pressing the left/right arrowkeys) to allow the player to jump and move at the same time.
+## .        Game Design 
 
-I haven't solved the issue where the player doesn't fall when you walk off of a platform yet. I logged in the console to see if it detected whether the player was on the collider or not - and it did recognize that, so  I need to revise the if statements in the collisions part of the code (the rectCollider function?) to sort it out.
+Our game is designed to move at a fast pace to convey the urgency of our warrior's quest. The player character is nimble and can move up and down the screen, displaying his training as a ninjitsu. All enemies track the player around each level to increase the pressure to act quickly as you navigate around. At the prototype stage, the focus was more on evasion, but we implemented the attack action in order to make the gameplay more offence driven, opposed to defence. 
 
-I lso ran into another issue when implamenting the enemy code. I need to again more carefully understand the code so I can properly implament the enemies into it. Whenever I tried to copy and paste it into the main file it would always generate lots of errors.
+We have mapped out a ranged attack mechanic, but have decided against using this to increase the pressure of having to deal with enemies at close quarters.
 
-The player sprite need to be updated because they overlay over the idle sprite.
+## .        Narrative Development.
 
-A major issue with the code so far though is that it is too cluttered. I need to find the code that lets me link these multiple files together to create a neater & less destructive coding environment.
+We plan to expand on the narrative of the game by increasing the number of levels/settings, the number of enemy types and including a 'final boss'. Currently the game begins in a cave, moves to a dojo and then moves outside to a nighttime landscape. 
 
- # ENEMY & ATTACK CODE IS IN MAIN FILE
-- Still issue with implamenting Rafa's enemy code but it has been succefully commented out
-- the attack code by Tom is in the main file and doesn't crash the player or tilemap code, however it doesn't appear whilst playing
+We also discussed that an easter egg for completing the game could be getting to replay as the fallen geisha from the game lore on further playthroughs. This is not something that we will be able to implement given the timeframe and code line limitations. 
 
-- Both of the independent projects made by both of them can be found in the repository. Rafa's under "Final Game Group" & Tom's under "Umbrella Warrior TJ"
+
+## .        Aesthetics
+
+The player is a classic ninja silhouette. The enemy sprites are designed to look like samurai ghosts. We have stylised our maps to look like Japan during the Edo period.
+
+## .         What we would add>>>
+
+Given time, we would have added in the ranged attack action and added some more levels. We liked the idea of creating a final boss level that presented an enemy with more hit points that required a number of attacks to defeat. Another mechanic that we have spoken about is a constraint that requires all enemies to be killed before the player can move to the next level. Thematically, this would lean into the character’s need for vengeance. With a larger team or studio, we could look to include animated cutscenes between levels. Giving us a chance to further flesh out the narrative. Knowledge of a more cohesive method of working on our code together, could have helped to streamline our building process and allow for further technical advancements.
