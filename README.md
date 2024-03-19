@@ -20,6 +20,8 @@ I created the attack action in a simple rectangle format so that we could implem
 ### RAFA  
 
 ### DANNY  
+I was in control of the tile map rooms for the player to jump and fight around, I made and designed the artwork by drawing the tiles using pixel drawing tools for the background and then assembling them to create a field which fits the aesthetic of the game so that it is immersive for the player and is visually pleasing and feels nice to play. The first map i made was the dojo looking one which had lots of props scattered around for the player to climb on, and from then i built 2 cave like maps with spikes and platforms and the last map is the grassy moon type map.
+
 
 ## .        Themes 
 
