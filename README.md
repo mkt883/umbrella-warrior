@@ -10,10 +10,11 @@ We have created a side scrolling adventure game, reminiscent of early SNES, SEGA
 ## . Individual Contributions
 
 ### MARK
-I coded the player, compiled everyones contributions and helped to make it work together.
-I created the enemy & player sprites as well as all of the animations
-I made the tilesets for the 2nd 'dojo' level of the final game outcome (not to be confused with the one made by Danny in the prototype)
-I also helped in designing the levels for the final outcome, using what Danny had made.
+I coded the **player**, compiled everyones contributions and helped to make it work together.
+I created the enemy & player sprites as well as all of their animations.
+I made the **_tilesets for the 2nd 'dojo'_** level of the final game outcome.
+I also helped in designing the levels for the final outcome, using what Danny had made and reworking it slightly.
+I also coded the **scene switching** function, pause menu and end screen.
 
 ### THOMAS 
 My contributions to the project were creating the main menu and subsequent screens. I wrote the lore, tutorial and credit screens. I used mouseIsOver, MousePressed and Draw functions to achieve this. To improve formatting, I used arrays for the content of each screen. I also designed the Umbrella Warrior artwork on the main menu and added the rain affect by generating falling rect shapes.
@@ -53,3 +54,5 @@ The player is a classic ninja silhouette. The enemy sprites are designed to look
 ## .         What we would add>>>
 
 Given time, we would have added in the ranged attack action and added some more levels. We liked the idea of creating a final boss level that presented an enemy with more hit points that required a number of attacks to defeat. Another mechanic that we have spoken about is a constraint that requires all enemies to be killed before the player can move to the next level. Thematically, this would lean into the character’s need for vengeance. With a larger team or studio, we could look to include animated cutscenes between levels. Giving us a chance to further flesh out the narrative. Knowledge of a more cohesive method of working on our code together, could have helped to streamline our building process and allow for further technical advancements. We would definitely have added a score and sound effects to the game, had we the time.
+
+Additionally, we couldn't implament the main menu screen in time. Everything in it works except for the play button. Currently, **_it's commented out_** inside the index tab. Again, had we given ourselves more time, we would have coded in the main menu screen seamlessly
