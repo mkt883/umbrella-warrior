@@ -42,7 +42,7 @@ function collisionsEnemyPlayer(){
         enemy.reset();
       }
     }
-
+// Checks if the players attack hitbox collides with an enemy and removes the enemy from the enemy array
     for (let enemy of enemies) {
       if (player.isAttacking && player.hitbox && player.checkAttackCollisionWithEnemy(enemy)) {
           // Remove the enemy from the array
@@ -83,7 +83,7 @@ reset() {
 }
 
 
-  
+  //Code to make the enemies follow the players position
 
     update(playerX, playerY) {
       // Calculate the direction towards the player
@@ -98,8 +98,10 @@ reset() {
       // Move the enemy towards the player
       this.x += dx * this.speed;
       this.y += dy * this.speed;
-  
-      let choice = floor(random(4));
+
+        //Random shaky movement to make then feel more alive
+
+      let choice = floor(random(4)); //This generates a random integer between 1 and 3 and moves the enemies in different directions based on the random integer choice
       if (choice === 0) {
         this.x += this.speed;
       } else if (choice === 1) {
@@ -109,7 +111,7 @@ reset() {
       } else {
         this.y -= this.speed;
       }
-      this.x = constrain(this.x, 0, width - this.size);
+      this.x = constrain(this.x, 0, width - this.size);//This just constrains enemy within canvas boundaries
       this.y = constrain(this.y, 0, height - this.size);
   
       
