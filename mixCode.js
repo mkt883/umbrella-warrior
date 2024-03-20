@@ -5,8 +5,8 @@ function preload(){
   //TILES
   //nullTile (for end)
   textures[28] = loadImage("tiles/tile_.png");
-  
-//dani-dojo
+
+  //dani-dojo
   danny_dojo = loadImage("danny-dojo.png"); //made using the old tilemap so instead of remaking it I just screenshot it and put it in
 
   //My files (into-DOJO)
@@ -113,9 +113,11 @@ function draw() {
   loadColliders();
   displayTiles();
 
+
   if(sceneIndex == 5){
     endGameText();
   }
+  
 
 
   //HARM OBJS:
@@ -145,7 +147,11 @@ function displayTiles(){
         tilemap[across][down].display(); // runs display() method for each tile!
        // tilemap[across][down].debug(); // runs debug() method for each tile!
     }
-   }
+  }
+
+  if(sceneIndex === 6){
+    dannyDojo();
+  }
 }
 function loadTriggers(){
   trigger_1.draw();
@@ -251,9 +257,4 @@ function mousePressed (){
   console.log(mouseX + "<-- mouseX, mouseY-->" + mouseY)
 }
 
-function mainMenu(){
-  /*
-
-  */
-}
 
