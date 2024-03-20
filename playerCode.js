@@ -164,6 +164,9 @@ let player = {
             // Reset player position
             this.x = 50;
             this.y = 50;
+            // Reset player velocity
+            this.vx = 0;
+            this.vy = 0;
 
             // Reset all enemies
             for (let enemy of enemies) {
