@@ -5,6 +5,9 @@ function preload(){
   //TILES
   //nullTile (for end)
   textures[28] = loadImage("tiles/tile_.png");
+  
+//dani-dojo
+  danny_dojo = loadImage("danny-dojo.png"); //made using the old tilemap so instead of remaking it I just screenshot it and put it in
 
   //My files (into-DOJO)
   textures[0] = loadImage("tiles/tile_wood-base.png");
