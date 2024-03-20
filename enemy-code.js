@@ -61,7 +61,7 @@ class Enemy {
       this.y = y;
       this.size = size;
       this.img = img;
-      this.speed = 0.3 ; // Adjust speed as needed
+      this.speed = 0.3 ; 
  }
 
  checkCollisionWithPlayer(player) {
