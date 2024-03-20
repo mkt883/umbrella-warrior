@@ -1,4 +1,4 @@
-let sceneIndex = 5;
+let sceneIndex = 1;
 
 /*            TILEMAP STUFF              */
 let tilemap = [];
