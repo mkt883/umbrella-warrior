@@ -11,7 +11,7 @@ function enemeyCreate(){
     for (let i = 0; i < 5; i++) {
         let x = random(width); //Placed at random x-coordinate within canvas width
         let y = random(height); // Random y-coordinate within canvas height
-        let enemy = new Enemy(x, y, 50, enemyImage); // Create a new Enemy object with random position and specified size of 50
+        let enemy = new Enemy(x, y, 50, enemyImage); // Create a new Enemy object with random position and size of 50
         enemies.push(enemy); //This adds the enemy objects to the enemies array
       }
 }
@@ -26,7 +26,7 @@ function enemeyDisplay(){
     enemy.display();
   }
 }
-
+//Function to check the collision between enemy and player in order for player to die and reset position
 function collisionsEnemyPlayer(){
   for (let enemy of enemies) {
     enemy.update(player.x, player.y);
