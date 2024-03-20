@@ -10,7 +10,7 @@ We have created a side scrolling adventure game, reminiscent of early SNES, SEGA
 ## . Individual Contributions
 
 ### MARK
-I coded the player, compiled everyones contributions together and helped to make it work together.
+I coded the player, compiled everyones contributions and helped to make it work together.
 I created the enemy & player sprites as well as all of the animations
 I made the tilesets for the 2nd 'dojo' level of the final game outcome (not to be confused with the one made by Danny in the prototype)
 I also helped in designing the levels for the final outcome, using what Danny had made.
