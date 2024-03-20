@@ -1,3 +1,28 @@
+/*
+Mark notes:
+- Originally we were using the 100x100 tile grid shown to us in the workshops, but 
+  I thought it would be better if the player had more space to move around so I increased it to 400x400
+  
+- I used Danny's tiles for the cave, dungeon & moon levels (tsuki [moon in japanese]) to put together those levels. 
+  They were originally made using a 100x100 tile map so I had to rework them. 
+  
+- One of the issues I had was with the colliders. They always generated for every level at once, even with 
+  parameters such as (if in level 2 don't generate the level 1 colliders). To counter this I just recycled
+  the same created colliders & moved any unused tiles underneath the canvas. 
+  I loaded it all in the setup() so I could just call to the colliders I needed at any point, not 
+  having to worry about the previous level colliders being generated.
+  
+- I created the tiles for the lvl_dojo_1/2/3, I didn't have enough time to add the other levels in though
+
+- Because of how buggy the player movement is, I tried to make an out of bounds box to respawn the player, but
+  it was also quite inconsistent at times. For example, when i'd load into the next level the player would just float away.
+  At first I just made a box roughly 30-50px bigger than the canvas which surrounded it, having code which detected whether the
+  player was actually inside the box, if not - reset position. 
+  It worked at first, but again it had bugs so I tried reversing it & adding 4 trigger boxes around the canvas which was meant
+  to rest the player position if it collided with it, however it didn't work.
+  
+*/
+
 let sceneIndex = 1;
 
 let danny_dojo;
@@ -185,10 +210,10 @@ let sc5 = [
     [28, 28, 28, 28, 28, 28, 28, 28, 28, 28, 28, 28, 28, 28, 28, 28, 28, 28, 28, 28]  // 19
 ]
 
-
+//loads the specified scene/level
 function loadScene(){
     if(sceneIndex === 0){
-        inMainMenu = true;
+        inMainMenu = true; //couldn't get the main menu to work in time, play button reacts (in console & stops itself from working) but doesn't switch to the main game
     } 
     if(sceneIndex === 1){
         lvl_cave();
@@ -225,19 +250,21 @@ function loadScene(){
 }
 
 /*for debug purposes
+
 function mousePressed(){
     // sceneIndex++
 }*/
-// function setSpawn(){
-//     if(sceneIndex === 1){
-//         player.x = 25;
+// function setSpawn(){             // this didn't work because it fixes the player position, I ended up just
+//     if(sceneIndex === 1){            calling the position once you hit the sceneSwitchTrigger because it only 
+//         player.x = 25;                calls the position one time (when you enter the level)
 //         player.y = 350;
 //         player.vx = 0;
 //         player.vy = 0;
 //     }
 // }
 
-function switchSceneTrigger(){
+//when you switch level (sets pos & changes scene & spawns enemies)
+function switchSceneTrigger(){ 
     // if(sceneIndex === 1){
      
     // }
@@ -405,7 +432,7 @@ function lvl_dojo_1(){
         }
     }
 
-    if(outOfBounds){
+    if(outOfBounds){ //messed with player positioning at points whilst making
         player.x = 0;
         player.y = 0;
         player.vx = 0;
@@ -735,6 +762,6 @@ class Tile {
         pop();
 
         text(this.tileID, this.x, this.y);
-    } // I've hidden the DEBUG method but this is where the code for it goes!
+    } 
 }
 
