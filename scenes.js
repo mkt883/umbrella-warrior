@@ -1,5 +1,7 @@
 let sceneIndex = 1;
 
+let danny_dojo;
+
 /*            TILEMAP STUFF              */
 let tilemap = [];
 let numDown = 20;
@@ -186,7 +188,7 @@ let sc5 = [
 
 function loadScene(){
     if(sceneIndex === 0){
-        //mainMenu();
+        inMainMenu = true;
     } 
     if(sceneIndex === 1){
         lvl_cave();
@@ -213,6 +215,13 @@ function loadScene(){
     if(sceneIndex === 5){
         lvl_sc5();
     }
+    if(sceneIndex === 6){
+        dannyDojo();
+    }
+
+    if(sceneIndex > 0){
+        inMainMenu = false;
+    }
 }
 
 /*for debug purposes
@@ -229,9 +238,9 @@ function mousePressed(){
 // }
 
 function switchSceneTrigger(){
-    if(sceneIndex === 1){
+    // if(sceneIndex === 1){
      
-    }
+    // }
     if(rectColliding(player, trigger_1)&& sceneIndex === 1){
         sceneIndex = 2;
 
@@ -243,6 +252,16 @@ function switchSceneTrigger(){
         enemeyCreate();
     }
     if(rectColliding(player, trigger_2)&& sceneIndex === 2){
+        sceneIndex = 6;
+
+        player.x = 50;
+        player.y = 300;
+        player.vx = 0;
+        player.vy = 0;
+        enemeyDisplay();
+        enemeyCreate();
+    }
+    if(rectColliding(player, trigger_4)&& sceneIndex === 6){
         sceneIndex = 3;
 
         player.x = 25;
@@ -606,6 +625,51 @@ function lvl_sc5(){
         }
     }
 }
+function dannyDojo(){
+    image(danny_dojo, 0, 0, 500, 500);
+
+    //ground tiles
+  r1 = new rectangle(0, 450, 500, 100)
+
+  //tile 5 collisions
+    //bottom
+    r2 = new rectangle(50, 300, 50, 100)
+    r3 = new rectangle(400, 300, 50, 100)
+    //top
+    r4 = new rectangle(50, 50, 50, 100)
+    r5 = new rectangle(400, 50, 50, 100)
+
+  //tile 0 'banner' tiles
+  r6 = new rectangle(200, 150, 100, 10)
+  r7 = new rectangle(200, 300, 100, 10)
+
+  //window sills
+  r8 = new rectangle(50, 240, 50, 5)
+  r9 = new rectangle(400, 240, 50, 5)
+
+  //left wall && ceiling (stop player from going out of bounds)
+  r10 = new rectangle(-45, 0, 50, 500); 
+  r11 = new rectangle(0, -45, 500, 50); 
+
+
+  trigger_5 = new rectangle(450, 0, 75, 500);
+
+
+  //inactive
+    r12 = new rectangle(600, 75, 250, 25); 
+    r13 = new rectangle(600, 350, 50, 15) 
+    r14 = new rectangle(600, 375, 75, 25)
+    r15 = new rectangle(600, 225, 50, 20)
+    r16 = new rectangle(600, 350, 50, 15) 
+    r17 = new rectangle(600, 375, 75, 25)
+    r18 = new rectangle(600, 225, 50, 20)
+    r19 = new rectangle(600, 300, 100, 10)
+    r20 = new rectangle(600, 375, 75, 25)
+    r21 = new rectangle(600, 225, 50, 20)
+
+    spikes1 = new rectangle(-500, 440, 50, 15)
+    spikes2 = new rectangle(-500, 440, 50, 15)
+}
 
 
 
@@ -620,6 +684,9 @@ function endGameText(){
         text("...for now", width/2, height/2);
         if(mouseX > 189 && mouseX < 310 && mouseY > 282 && mouseY < 303){
             highlightedText = [255, 0, 0];
+            if(mouseIsPressed){
+                location.reload() //since we cant go to the main menu, this is easier as it just refreshes the page
+            }
         }else{
             highlightedText = [255, 255, 255, 80];
         }
