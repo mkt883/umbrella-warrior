@@ -2,12 +2,23 @@
 
 
 /*
+  -The base for this player code was from a tutorial I found on YouTube: https://youtu.be/TwWZwS8iBrw?si=sYgLPSfmRwjXARF0
+  It was incomplete and basic however which allowed me to improve upon it (e.g. with the collision detection)
+  Overall a good starting point
+  -In this video, he also finds "rectangle rectangle collision" on mdn web docs (the same code i'm using here)
+
+  - For the collisions, I saw how collisions were tackled in the sideScroller notion page & improved my own code
+    by creating 4 independent rect colliders which detected each collider. This helped me to stop the player from 
+    running through walls
+  
   MAIN ISSUES:
     - Collisions are weak & bouncy
     - animations overlay sometimes (e.g. don't want run animation when jumping)
-    - Difficluty w flipping the player (for now have independent sprites but they overlay still)
+    - I had difficluty with flipping the player (for now have independent sprites but they overlay still)
 
-    - add hearts/lives
+    - I wanted to add a proper hearts/lives at first but I didn't give myself enough time to figure that out fully. 
+      The player does have health but any damage you take kills you too quickly for you to notice so I ended up just leaving it.
+    My logic though was:
       - store hearts in an array, when you lose health use pop();
 */
 
@@ -35,9 +46,9 @@ let isFacingRight = true;
 let player = {
     x: 50,
     y: 375,
-    vx: 0, 
-    vy: 0,
-    w: 32*1.25,
+    vx: 0, //velocityX     - I prefer the momentum physics of this
+    vy: 0, //velocityY       vs just start/stop. Also sort of urges the player to go as fast as possible
+    w: 32*1.25,    //increased player size because he was too small (width & height variables)
     h: 32*1.25,
     onGround: false,
     canJump: false,
@@ -57,6 +68,10 @@ let player = {
     hitbox: null, // Hitbox is not visible when not attacking
   
     draw: function() {
+      /*
+      This was to try and make the idle sprite flip, it half worked but when you look left it 
+      doesn't get rid of the facing right sprite, so you just look like a 4 arm monster
+      */
       if(!this.isMoving && !this.isJumping && !this.isAttacking){
         if(isFacingRight){
             image(playerSprite[0],this.x, this.y, this.w, this.h);
@@ -69,7 +84,7 @@ let player = {
     //   }
       push();
         noFill();
-        rect(this.x, this.y+5, this.w, this.h-5)
+        rect(this.x, this.y+5, this.w, this.h-5) //was to detect the player when the sprites didn't load
       pop();
       //console.log(this.isAttacking)
       
@@ -119,7 +134,7 @@ let player = {
       if(keyIsDown(RIGHT_ARROW)){
         this.vx += 0.9
       }
-      
+      //this variable was for the run animation
       if((keyIsDown(RIGHT_ARROW) || keyIsDown(LEFT_ARROW)) && this.onGround && !this.isJumping && !this.isAttacking){
         this.isMoving = true;
       }else{
@@ -286,7 +301,7 @@ function damageToPlayer(){
   }
 }
 
-function playerSuperGlitchRespawn(){
+function playerSuperGlitchRespawn(){ //this was the function for out of bounds
   /*boundsBox = new rectangle(0, 0, width+40, height+40);
 
   boundaryBottom = new rectangle(0, 500, width+20, 100);
