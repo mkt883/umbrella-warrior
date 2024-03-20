@@ -98,6 +98,7 @@ function setup() {
   lvl_dojo_3();
   lvl_dungeon();
   lvl_tsuki();
+  dannyDojo();
 
  // enemeyCreate();
 }
