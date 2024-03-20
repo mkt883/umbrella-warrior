@@ -1,26 +1,28 @@
 // Rafas code //
-let enemies = [];
-let enemyImage;
-//___________//
+let enemies = []; //Empty array to store enemies
+let enemyImage; // Variable to hold enemy image
 
-// RAFA'S CODE //
 
-//for setup:
+
+
+//Function to create the enemies
 function enemeyCreate(){
-    // RAFA'S CODE//
+    //Loop to create 5 enemy objects with random positions
     for (let i = 0; i < 5; i++) {
-        let x = random(width);
-        let y = random(height);
-        let enemy = new Enemy(x, y, 50, enemyImage); // Adjust size as needed
-        enemies.push(enemy);
+        let x = random(width); //Placed at random x-coordinate within canvas width
+        let y = random(height); // Random y-coordinate within canvas height
+        let enemy = new Enemy(x, y, 50, enemyImage); // Create a new Enemy object with random position and specified size of 50
+        enemies.push(enemy); //This adds the enemy objects to the enemies array
       }
 }
 
 //for draw
 function enemeyDisplay(){
-    // RAFA'S CODE //
+    // Loop through all enemy objects in the enemies array
   for (let enemy of enemies) {
+      // Update the enemy's position based on player's position
     enemy.update(player.x, player.y);
+      //Displays enemy
     enemy.display();
   }
 }
@@ -66,7 +68,7 @@ class Enemy {
   // Calculate the distance between enemy and player
   let distance = dist(this.x, this.y, player.x, player.y);
 
-  // Check if the distance is less than the sum of their radii (or sizes)
+  // Check if the distance is less than their size
   if (distance < (this.size + player.size) / 0.5) {
     // Collision detected
     return true;
